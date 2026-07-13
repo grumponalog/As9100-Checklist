@@ -56,6 +56,21 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
 .check-item label{font-size:15.5px; line-height:1.5; cursor:pointer;}
 .check-item input[type=checkbox]:checked + label{opacity:0.55;}
 
+.quick-nav{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 34px;}
+.quick-nav a{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;
+  color:var(--teal-deep); text-decoration:none; padding:6px 14px; border-radius:8px; background:rgba(0,103,120,0.06); transition:.2s;}
+.quick-nav a:hover{background:var(--teal); color:var(--cream);}
+
+.doc-status{position:relative; z-index:1; margin-top:26px; display:inline-flex; align-items:center; gap:10px;}
+.ds-label{font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--teal); opacity:.7;}
+.doc-status select{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1px;
+  padding:8px 14px; border-radius:999px; border:1.5px solid var(--teal-bright); background:transparent;
+  color:var(--teal-deep); cursor:pointer;}
+.doc-status select.st-revisions_required{border-color:var(--maroon); color:var(--maroon);}
+.doc-status select.st-revisions_made{border-color:var(--orange); color:var(--orange);}
+.doc-status select.st-approved{background:var(--teal); border-color:var(--teal); color:var(--cream);}
+.ds-meta{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--teal); opacity:.6;}
+
 .proof{background:var(--white); border-radius:16px; border-left:4px solid var(--orange);
   padding:26px 30px; margin-top:52px; box-shadow:0 2px 12px rgba(0,0,0,0.05);}
 .proof h4{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:12px;}
@@ -88,6 +103,16 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
   <h1 class="hero-title">The AS9100 Readiness Checklist</h1>
   <p class="hero-sub">The gaps that pass internal review and fail the audit.</p>
   <div class="hero-meta">PREPARED BY JOSH AGEE, VINYL MARKETING</div>
+  <div class="doc-status">
+    <span class="ds-label">Status</span>
+    <select id="ds-select" disabled>
+      <option value="ready_for_review">Ready for review</option>
+      <option value="revisions_required">Revisions required</option>
+      <option value="revisions_made">Revisions made</option>
+      <option value="approved">Approved</option>
+    </select>
+    <span class="ds-meta" id="ds-meta"></span>
+  </div>
 </div>
 
 <div class="container" data-comment-root>
@@ -101,41 +126,50 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
     </ol>
   </div>
 
+  <nav class="quick-nav">
+    <a href="#s1">01 &middot; Leadership</a>
+    <a href="#s2">02 &middot; Documentation</a>
+    <a href="#s3">03 &middot; Process control</a>
+    <a href="#s4">04 &middot; Supply chain</a>
+    <a href="#s5">05 &middot; Sustainment</a>
+    <a href="#s6">06 &middot; Aerospace-specific</a>
+  </nav>
+
   <div class="intro">
     <p>This checklist shows how we walk through AS9100 readiness with clients. Work through it honestly, with the people who actually run the floor. The value is not in the boxes you check. It is in the items you cannot confidently check, because those are the gaps that surface in a certification audit, not before.</p>
     <p class="note">One note before you start: this surfaces the gaps we see most in the field. It is not a substitute for a clause-by-clause gap assessment against the standard.</p>
   </div>
 
-  <div class="check-section"><span>01</span>Leadership and ownership</div>
+  <div class="check-section" id="s1"><span>01</span>Leadership and ownership</div>
   <div class="check-item"><input type="checkbox" id="c1"><label for="c1">Leadership can explain what AS9100 requires of them, not just of the quality function.</label></div>
   <div class="check-item"><input type="checkbox" id="c2"><label for="c2">One person owns the implementation, with the authority and the hours to run it.</label></div>
   <div class="check-item"><input type="checkbox" id="c3"><label for="c3">Implementation time is protected as scheduled working sessions, not fit in around the edges.</label></div>
   <div class="check-item"><input type="checkbox" id="c4"><label for="c4">Progress is visible on one dashboard: last week's results, this week's expectations, and the status of key system documentation.</label></div>
 
-  <div class="check-section"><span>02</span>Right-sized documentation</div>
+  <div class="check-section" id="s2"><span>02</span>Right-sized documentation</div>
   <div class="check-item"><input type="checkbox" id="c5"><label for="c5">Every procedure has passed a necessary-versus-unnecessary review. If it does not add value, it is gone.</label></div>
   <div class="check-item"><input type="checkbox" id="c6"><label for="c6">The documented process is the process actually running on the floor.</label></div>
   <div class="check-item"><input type="checkbox" id="c7"><label for="c7">Work instructions exist where the risk lives, not everywhere.</label></div>
   <div class="check-item"><input type="checkbox" id="c8"><label for="c8">No document exists only to impress an auditor.</label></div>
 
-  <div class="check-section"><span>03</span>Process control and quality at the source</div>
+  <div class="check-section" id="s3"><span>03</span>Process control and quality at the source</div>
   <div class="check-item"><input type="checkbox" id="c9"><label for="c9">Process controls operate in practice, not just on paper.</label></div>
   <div class="check-item"><input type="checkbox" id="c10"><label for="c10">Problems are caught where the work happens, not at final inspection.</label></div>
   <div class="check-item"><input type="checkbox" id="c11"><label for="c11">Corrective actions close the root cause, not just the paperwork.</label></div>
   <div class="check-item"><input type="checkbox" id="c12"><label for="c12">Any claim in your quality manual can be traced to evidence from the floor.</label></div>
 
-  <div class="check-section"><span>04</span>Supply chain</div>
+  <div class="check-section" id="s4"><span>04</span>Supply chain</div>
   <div class="check-item"><input type="checkbox" id="c13"><label for="c13">Suppliers are held to the same standard as your own floor.</label></div>
   <div class="check-item"><input type="checkbox" id="c14"><label for="c14">Requirements flow down to suppliers, and evidence flows back.</label></div>
   <div class="check-item"><input type="checkbox" id="c15"><label for="c15">You know which supplier would fail your own audit tomorrow.</label></div>
 
-  <div class="check-section"><span>05</span>Integration and sustainment</div>
+  <div class="check-section" id="s5"><span>05</span>Integration and sustainment</div>
   <div class="check-item"><input type="checkbox" id="c16"><label for="c16">The quality system is woven into how the business already runs, not bolted on.</label></div>
   <div class="check-item"><input type="checkbox" id="c17"><label for="c17">Reviews and internal audits still happen in busy weeks, not only in slow ones.</label></div>
   <div class="check-item"><input type="checkbox" id="c18"><label for="c18">The team can keep the system running without a consultant in the room.</label></div>
   <div class="check-item"><input type="checkbox" id="c19"><label for="c19">The timeline to certification is realistic, including audit scheduling.</label></div>
 
-  <div class="check-section"><span>06</span>The aerospace-specific requirements</div>
+  <div class="check-section" id="s6"><span>06</span>The aerospace-specific requirements</div>
   <div class="check-item"><input type="checkbox" id="c20"><label for="c20">Configuration is controlled: the floor builds the revision engineering released.</label></div>
   <div class="check-item"><input type="checkbox" id="c21"><label for="c21">Counterfeit parts prevention is a working process, not a policy statement.</label></div>
   <div class="check-item"><input type="checkbox" id="c22"><label for="c22">Product safety has an owner, and people can name their role in it.</label></div>
@@ -528,6 +562,35 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
+})();
+</script>
+
+<script>
+(function(){
+  const URL_="https://bsjgyynqtrgbakqzhyfq.supabase.co";
+  const KEY_="sb_publishable_XPMClOrQXP1ka-O0wnWFRw_-tYhhaZi";
+  const DOC_ID="cbs-as9100-readiness-checklist";
+  const sel=document.getElementById("ds-select"), meta=document.getElementById("ds-meta");
+  function start(){
+    if(!sel||!window.supabase) return;
+    const sb=window.supabase.createClient(URL_,KEY_);
+    const paint=()=>{ sel.className="st-"+sel.value; };
+    async function load(){
+      const {data}=await sb.from("doc_status").select("*").eq("doc_id",DOC_ID).maybeSingle();
+      if(data){ sel.value=data.status; meta.textContent=data.updated_by?"set by "+data.updated_by:""; }
+      paint(); sel.disabled=false;
+    }
+    sel.addEventListener("change", async ()=>{
+      let who=(localStorage.getItem("cbs_cmt_author")||"").trim();
+      if(!who){ who=(prompt("Your name?")||"Anonymous").trim()||"Anonymous"; localStorage.setItem("cbs_cmt_author",who); }
+      paint();
+      const {error}=await sb.from("doc_status").upsert({doc_id:DOC_ID,status:sel.value,updated_by:who,updated_at:new Date().toISOString()});
+      if(!error) meta.textContent="set by "+who;
+    });
+    sb.channel("cbs-status-"+DOC_ID).on("postgres_changes",{event:"*",schema:"public",table:"doc_status",filter:"doc_id=eq."+DOC_ID},load).subscribe();
+    load();
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",start); else start();
 })();
 </script>
 
