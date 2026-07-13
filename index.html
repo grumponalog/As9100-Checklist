@@ -3,51 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CBS AS9100 Readiness Checklist | Vinyl Marketing</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<title>The AS9100 Readiness Checklist | Competitive Business Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#ECE8E2; --teal-deep:#0D5A67; --teal:#006778; --teal-bright:#0097A7;
-  --teal-light:#80C6C6; --orange:#DC8044; --peach:#FFBA7B; --maroon:#803038; --white:#fff;
+  --cream:#F7F8F8; --teal-deep:#030F33; --teal:#0093D0; --teal-bright:#0093D0;
+  --teal-light:#DFE0E1; --orange:#0093D0; --peach:#FFF03B; --maroon:#C02B0A; --white:#fff;
+  --steel:#616163;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif; color:var(--teal-deep); background:var(--cream);
+body{font-family:'Nunito Sans',sans-serif; color:var(--teal-deep); background:var(--cream);
   font-size:17px; line-height:1.6; font-weight:300; -webkit-font-smoothing:antialiased;}
-body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; height:70vw;
-  max-width:900px; max-height:900px;
-  background:radial-gradient(ellipse at center, rgba(220,128,68,0.25) 0%, rgba(255,186,123,0.18) 25%,
-    rgba(220,128,68,0.08) 50%, transparent 70%);
-  border-radius:50%; pointer-events:none; z-index:0; filter:blur(40px);}
 
 .page-header{position:relative; z-index:1; padding:48px 40px 0; text-align:center;}
 .page-tabs{display:flex; justify-content:center; gap:8px; margin-bottom:44px;}
-.page-tabs a{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1px;
+.page-tabs a{font-family:'Barlow Condensed',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1px;
   color:var(--teal-deep); text-decoration:none; padding:8px 20px; border-radius:999px;
-  background:rgba(0,103,120,0.07); transition:background .2s, color .2s;}
-.page-tabs a:hover{background:rgba(0,103,120,0.15);}
+  background:rgba(0,147,208,0.07); transition:background .2s, color .2s;}
+.page-tabs a:hover{background:rgba(0,147,208,0.15);}
 .page-tabs a.active{background:var(--teal); color:var(--cream);}
-.hero-eyebrow{font-family:'JetBrains Mono',monospace; font-size:13px; text-transform:uppercase;
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif; font-size:15px; text-transform:uppercase;
   letter-spacing:2px; color:var(--orange); margin-bottom:18px;}
 .hero-title{font-weight:400; font-size:clamp(34px,5vw,50px); letter-spacing:-1px; line-height:1.15; max-width:720px; margin:0 auto;}
 .hero-sub{font-weight:300; font-size:clamp(16px,2vw,20px); max-width:600px; margin:24px auto 0; line-height:1.6; opacity:0.8;}
-.hero-meta{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal); letter-spacing:0.5px; margin-top:24px; opacity:0.7;}
+.hero-meta{font-family:'Barlow Condensed',sans-serif; font-size:12px; color:var(--teal); letter-spacing:0.5px; margin-top:24px; opacity:0.7;}
 .container{position:relative; z-index:1; max-width:760px; margin:0 auto; padding:54px 40px 100px;}
 
-.usage{background:rgba(0,103,120,0.04); border-left:3px solid var(--teal-bright); border-radius:12px; padding:22px 26px; margin-bottom:36px;}
-.usage h4{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:10px;}
+.usage{background:rgba(3,15,51,0.04); border-left:3px solid var(--teal-bright); border-radius:12px; padding:22px 26px; margin-bottom:36px;}
+.usage h4{font-family:'Barlow Condensed',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:10px;}
 .usage ol{margin:0 0 0 20px; font-size:15px;} .usage li{margin-bottom:7px; opacity:0.88;}
 
 .intro p{font-size:16px; margin-bottom:14px;}
 .intro .note{font-weight:400; color:var(--teal);}
 
-.check-section{font-family:'JetBrains Mono',monospace; font-weight:300; font-size:15px; text-transform:uppercase;
+.check-section{font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:17px; text-transform:uppercase;
   color:var(--teal-deep); margin-top:52px; margin-bottom:14px; display:inline-block;
-  border-bottom:2px solid var(--peach); padding-bottom:4px;}
+  border-bottom:3px solid var(--peach); padding-bottom:4px;}
 .check-section span{color:var(--orange); margin-right:10px;}
 
 .check-item{display:flex; align-items:flex-start; gap:14px; background:var(--white);
-  border-radius:12px; padding:14px 18px; margin-bottom:10px; box-shadow:0 1px 6px rgba(0,0,0,0.04);}
+  border-radius:8px; padding:14px 18px; margin-bottom:10px; border:1px solid rgba(3,15,51,0.08); box-shadow:0 2px 8px rgba(3,15,51,0.05);}
 .check-item input[type=checkbox]{appearance:none; -webkit-appearance:none; flex:none; width:20px; height:20px;
   margin-top:3px; border:1.5px solid var(--teal); border-radius:5px; cursor:pointer; position:relative; background:var(--white);}
 .check-item input[type=checkbox]:checked{background:var(--teal);}
@@ -57,38 +53,38 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
 .check-item input[type=checkbox]:checked + label{opacity:0.55;}
 
 .quick-nav{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 34px;}
-.quick-nav a{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;
-  color:var(--teal-deep); text-decoration:none; padding:6px 14px; border-radius:8px; background:rgba(0,103,120,0.06); transition:.2s;}
+.quick-nav a{font-family:'Barlow Condensed',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:0.5px;
+  color:var(--teal-deep); text-decoration:none; padding:6px 14px; border-radius:8px; background:rgba(0,147,208,0.06); transition:.2s;}
 .quick-nav a:hover{background:var(--teal); color:var(--cream);}
 
 .doc-status{position:relative; z-index:1; margin-top:26px; display:inline-flex; align-items:center; gap:10px;}
-.ds-label{font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--teal); opacity:.7;}
-.doc-status select{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1px;
+.ds-label{font-family:'Barlow Condensed',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--teal); opacity:.7;}
+.doc-status select{font-family:'Barlow Condensed',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1px;
   padding:8px 14px; border-radius:999px; border:1.5px solid var(--teal-bright); background:transparent;
   color:var(--teal-deep); cursor:pointer;}
 .doc-status select.st-revisions_required{border-color:var(--maroon); color:var(--maroon);}
 .doc-status select.st-revisions_made{border-color:var(--orange); color:var(--orange);}
 .doc-status select.st-approved{background:var(--teal); border-color:var(--teal); color:var(--cream);}
-.ds-meta{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--teal); opacity:.6;}
+.ds-meta{font-family:'Barlow Condensed',sans-serif; font-size:12px; color:var(--steel);}
 
-.proof{background:var(--white); border-radius:16px; border-left:4px solid var(--orange);
-  padding:26px 30px; margin-top:52px; box-shadow:0 2px 12px rgba(0,0,0,0.05);}
-.proof h4{font-family:'JetBrains Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:12px;}
+.proof{background:var(--white); border-radius:12px; border-left:4px solid var(--orange); border:1px solid rgba(3,15,51,0.08);
+  padding:26px 30px; margin-top:52px; box-shadow:0 8px 24px rgba(3,15,51,0.08);}
+.proof h4{font-family:'Barlow Condensed',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:12px;}
 .proof p{font-size:15.5px; margin-bottom:12px;}
 .proof blockquote{font-size:15.5px; font-weight:400; color:var(--teal); margin:0 0 8px 14px;}
-.proof cite{font-family:'JetBrains Mono',monospace; font-style:normal; font-size:12px; color:var(--teal-deep); margin-left:14px;}
+.proof cite{font-family:'Barlow Condensed',sans-serif; font-style:normal; font-size:12px; color:var(--teal-deep); margin-left:14px;}
 
-.cta{background:var(--teal-deep); border-radius:16px; padding:30px 34px; margin-top:36px; color:var(--cream);}
+.cta{background:var(--teal-deep); border-radius:12px; padding:30px 34px; margin-top:36px; color:var(--cream);}
 .cta h3{font-size:21px; font-weight:600; margin-bottom:10px;}
 .cta p{font-size:15px; opacity:0.9; margin-bottom:18px;}
-.btn{display:inline-block; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; letter-spacing:0.5px;
+.btn{display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.5px;
   text-transform:uppercase; color:var(--white); background:var(--orange); border-radius:8px;
   padding:10px 18px; text-decoration:none; margin-right:10px;}
-.btn.ghost{background:transparent; border:1px dashed var(--peach); color:var(--cream);}
+.btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.45); color:var(--white);}
 
 .footer-bar{background:var(--teal); padding:36px 40px; margin-top:72px; position:relative; z-index:1;}
 .footer-inner{max-width:760px; margin:0 auto; display:flex; justify-content:center;}
-.footer-meta{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal-light); letter-spacing:0.5px;}
+.footer-meta{font-family:'Barlow Condensed',sans-serif; font-size:12px; color:var(--teal-light); letter-spacing:0.5px;}
 
 @media (max-width:600px){
   .page-header,.container{padding-left:22px; padding-right:22px;}
@@ -99,7 +95,8 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
 <body>
 
 <div class="page-header">
-  <div class="hero-eyebrow">Competitive Business Solutions &middot; Aerospace and Defense</div>
+  <div style="margin-bottom:34px;"><img src="https://cbsteam.com/wp-content/uploads/CBS_Horizontal_300ppi_Two-Color_500px-1.png" alt="Competitive Business Solutions" style="height:58px; width:auto;"></div>
+  <div class="hero-eyebrow">Aerospace and Defense</div>
   <h1 class="hero-title">The AS9100 Readiness Checklist</h1>
   <p class="hero-sub">The gaps that pass internal review and fail the audit.</p>
   <div class="hero-meta">PREPARED BY JOSH AGEE, VINYL MARKETING</div>
@@ -140,36 +137,36 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
     <p class="note">One note before you start: this surfaces the gaps we see most in the field. It is not a substitute for a clause-by-clause gap assessment against the standard.</p>
   </div>
 
-  <div class="check-section" id="s1"><span>01</span>Leadership and ownership</div>
+  <div class="check-section" id="s1"><span>01</span>Leadership and Ownership</div>
   <div class="check-item"><input type="checkbox" id="c1"><label for="c1">Leadership can explain what AS9100 requires of them, not just of the quality function.</label></div>
   <div class="check-item"><input type="checkbox" id="c2"><label for="c2">One person owns the implementation, with the authority and the hours to run it.</label></div>
   <div class="check-item"><input type="checkbox" id="c3"><label for="c3">Implementation time is protected as scheduled working sessions, not fit in around the edges.</label></div>
   <div class="check-item"><input type="checkbox" id="c4"><label for="c4">Progress is visible on one dashboard: last week's results, this week's expectations, and the status of key system documentation.</label></div>
 
-  <div class="check-section" id="s2"><span>02</span>Right-sized documentation</div>
+  <div class="check-section" id="s2"><span>02</span>Right-Sized Documentation</div>
   <div class="check-item"><input type="checkbox" id="c5"><label for="c5">Every procedure has passed a necessary-versus-unnecessary review. If it does not add value, it is gone.</label></div>
   <div class="check-item"><input type="checkbox" id="c6"><label for="c6">The documented process is the process actually running on the floor.</label></div>
   <div class="check-item"><input type="checkbox" id="c7"><label for="c7">Work instructions exist where the risk lives, not everywhere.</label></div>
   <div class="check-item"><input type="checkbox" id="c8"><label for="c8">No document exists only to impress an auditor.</label></div>
 
-  <div class="check-section" id="s3"><span>03</span>Process control and quality at the source</div>
+  <div class="check-section" id="s3"><span>03</span>Process Control and Quality at the Source</div>
   <div class="check-item"><input type="checkbox" id="c9"><label for="c9">Process controls operate in practice, not just on paper.</label></div>
   <div class="check-item"><input type="checkbox" id="c10"><label for="c10">Problems are caught where the work happens, not at final inspection.</label></div>
   <div class="check-item"><input type="checkbox" id="c11"><label for="c11">Corrective actions close the root cause, not just the paperwork.</label></div>
   <div class="check-item"><input type="checkbox" id="c12"><label for="c12">Any claim in your quality manual can be traced to evidence from the floor.</label></div>
 
-  <div class="check-section" id="s4"><span>04</span>Supply chain</div>
+  <div class="check-section" id="s4"><span>04</span>Supply Chain</div>
   <div class="check-item"><input type="checkbox" id="c13"><label for="c13">Suppliers are held to the same standard as your own floor.</label></div>
   <div class="check-item"><input type="checkbox" id="c14"><label for="c14">Requirements flow down to suppliers, and evidence flows back.</label></div>
   <div class="check-item"><input type="checkbox" id="c15"><label for="c15">You know which supplier would fail your own audit tomorrow.</label></div>
 
-  <div class="check-section" id="s5"><span>05</span>Integration and sustainment</div>
+  <div class="check-section" id="s5"><span>05</span>Integration and Sustainment</div>
   <div class="check-item"><input type="checkbox" id="c16"><label for="c16">The quality system is woven into how the business already runs, not bolted on.</label></div>
   <div class="check-item"><input type="checkbox" id="c17"><label for="c17">Reviews and internal audits still happen in busy weeks, not only in slow ones.</label></div>
   <div class="check-item"><input type="checkbox" id="c18"><label for="c18">The team can keep the system running without a consultant in the room.</label></div>
   <div class="check-item"><input type="checkbox" id="c19"><label for="c19">The timeline to certification is realistic, including audit scheduling.</label></div>
 
-  <div class="check-section" id="s6"><span>06</span>The aerospace-specific requirements</div>
+  <div class="check-section" id="s6"><span>06</span>The Aerospace-Specific Requirements</div>
   <div class="check-item"><input type="checkbox" id="c20"><label for="c20">Configuration is controlled: the floor builds the revision engineering released.</label></div>
   <div class="check-item"><input type="checkbox" id="c21"><label for="c21">Counterfeit parts prevention is a working process, not a policy statement.</label></div>
   <div class="check-item"><input type="checkbox" id="c22"><label for="c22">Product safety has an owner, and people can name their role in it.</label></div>
@@ -204,14 +201,14 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
 <!-- Config + setup: see _comments_setup.md in this folder.        -->
 <!-- ============================================================= -->
 <style>
-  #cbs-cmt-app{font-family:'DM Sans',sans-serif;}
-  mark.cbs-cmt-hl{background:rgba(255,186,123,0.55); border-bottom:2px solid var(--orange);
+  #cbs-cmt-app{font-family:'Nunito Sans',sans-serif;}
+  mark.cbs-cmt-hl{background:rgba(255,240,59,0.45); border-bottom:2px solid var(--orange);
     border-radius:2px; cursor:pointer; padding:0 1px; transition:background .15s;}
-  mark.cbs-cmt-hl:hover, mark.cbs-cmt-hl.focus{background:rgba(220,128,68,0.55);}
-  mark.cbs-cmt-hl.resolved{background:rgba(128,198,198,0.30); border-bottom-color:var(--teal-light);}
+  mark.cbs-cmt-hl:hover, mark.cbs-cmt-hl.focus{background:rgba(255,240,59,0.75);}
+  mark.cbs-cmt-hl.resolved{background:rgba(154,215,245,0.35); border-bottom-color:var(--teal-light);}
 
   #cbs-cmt-fab{position:fixed; right:22px; bottom:22px; z-index:9000;
-    font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.5px;
+    font-family:'Barlow Condensed',sans-serif; font-size:13px; letter-spacing:.5px;
     background:var(--teal); color:var(--cream); border:none; border-radius:999px;
     padding:12px 18px; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,.18);}
   #cbs-cmt-fab:hover{background:var(--teal-deep);}
@@ -224,39 +221,39 @@ body::before{content:''; position:fixed; top:-20%; right:-15%; width:70vw; heigh
   .cbs-cmt-hd{background:var(--teal); color:var(--cream); padding:18px 20px; display:flex; align-items:center; justify-content:space-between;}
   .cbs-cmt-hd h3{font-size:16px; font-weight:600; margin:0;}
   .cbs-cmt-hd .x{background:none; border:none; color:var(--cream); font-size:22px; cursor:pointer; line-height:1;}
-  .cbs-cmt-hint{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.3px; color:var(--teal); opacity:.8; padding:10px 20px; border-bottom:1px solid #eee;}
+  .cbs-cmt-hint{font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:.3px; color:var(--teal); opacity:.8; padding:10px 20px; border-bottom:1px solid #eee;}
   #cbs-cmt-list{flex:1; overflow-y:auto; padding:14px 16px 30px;}
   .cbs-cmt-empty{color:#999; font-size:14px; text-align:center; padding:40px 16px;}
 
   .cbs-cmt-card{border:1px solid #e7e3dd; border-radius:12px; padding:13px 14px; margin-bottom:12px; background:#fcfbf9;}
-  .cbs-cmt-card.focus{border-color:var(--orange); box-shadow:0 0 0 2px rgba(220,128,68,.18);}
+  .cbs-cmt-card.focus{border-color:var(--orange); box-shadow:0 0 0 2px rgba(0,147,208,.18);}
   .cbs-cmt-card.resolved{opacity:.6;}
-  .cbs-cmt-quote{font-size:13px; color:var(--teal-deep); background:rgba(255,186,123,.22);
+  .cbs-cmt-quote{font-size:13px; color:var(--teal-deep); background:rgba(255,240,59,.25);
     border-left:3px solid var(--peach); border-radius:0 6px 6px 0; padding:6px 9px; margin-bottom:9px; font-style:italic;}
   .cbs-cmt-quote.orphan{background:#f3f0eb; border-left-color:#ccc; color:#999;}
   .cbs-cmt-msg{font-size:14.5px; line-height:1.5; margin-bottom:6px;}
-  .cbs-cmt-meta{font-family:'JetBrains Mono',monospace; font-size:11px; color:#999; margin-bottom:4px;}
+  .cbs-cmt-meta{font-family:'Barlow Condensed',sans-serif; font-size:11px; color:#999; margin-bottom:4px;}
   .cbs-cmt-meta b{color:var(--teal); font-weight:500;}
   .cbs-cmt-reply{font-size:14px; line-height:1.45; margin:7px 0 0 12px; padding-left:10px; border-left:2px solid #e7e3dd;}
   .cbs-cmt-actions{display:flex; gap:14px; margin-top:9px;}
-  .cbs-cmt-actions button{background:none; border:none; font-family:'JetBrains Mono',monospace; font-size:11px;
+  .cbs-cmt-actions button{background:none; border:none; font-family:'Barlow Condensed',sans-serif; font-size:11px;
     text-transform:uppercase; letter-spacing:.5px; color:var(--teal); cursor:pointer; padding:0;}
   .cbs-cmt-actions button:hover{color:var(--orange);}
 
   .cbs-cmt-form textarea, #cbs-cmt-compose textarea{width:100%; border:1px solid #ddd; border-radius:8px;
-    padding:8px 10px; font-family:'DM Sans',sans-serif; font-size:14px; resize:vertical; min-height:54px;}
+    padding:8px 10px; font-family:'Nunito Sans',sans-serif; font-size:14px; resize:vertical; min-height:54px;}
   .cbs-cmt-form input, #cbs-cmt-compose input{width:100%; border:1px solid #ddd; border-radius:8px;
-    padding:7px 10px; font-family:'DM Sans',sans-serif; font-size:14px; margin-bottom:7px;}
+    padding:7px 10px; font-family:'Nunito Sans',sans-serif; font-size:14px; margin-bottom:7px;}
   .cbs-cmt-form .row, #cbs-cmt-compose .row{display:flex; gap:8px; margin-top:8px;}
-  .cbs-cmt-btn{font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.4px; border:none;
+  .cbs-cmt-btn{font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:.4px; border:none;
     border-radius:8px; padding:8px 14px; cursor:pointer;}
   .cbs-cmt-btn.primary{background:var(--teal); color:var(--cream);} .cbs-cmt-btn.primary:hover{background:var(--teal-deep);}
-  .cbs-cmt-btn.ghost{background:rgba(0,103,120,.08); color:var(--teal-deep);}
+  .cbs-cmt-btn.ghost{background:rgba(0,147,208,.08); color:var(--teal-deep);}
 
   #cbs-cmt-compose{display:none; padding:14px 16px; border-bottom:1px solid #eee; background:#fff;}
   #cbs-cmt-compose.show{display:block;}
 
-  #cbs-cmt-selbtn{position:absolute; z-index:9200; display:none; font-family:'JetBrains Mono',monospace;
+  #cbs-cmt-selbtn{position:absolute; z-index:9200; display:none; font-family:'Barlow Condensed',sans-serif;
     font-size:12px; letter-spacing:.4px; background:var(--teal-deep); color:var(--cream); border:none;
     border-radius:8px; padding:7px 13px; cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,.22);}
   #cbs-cmt-selbtn.show{display:inline-block;}
