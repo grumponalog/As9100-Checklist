@@ -90,6 +90,36 @@ body{font-family:'Nunito Sans',sans-serif; color:var(--teal-deep); background:va
   .page-header,.container{padding-left:22px; padding-right:22px;}
   .check-item{padding:12px 14px;} .footer-bar{padding:28px 22px;}
 }
+
+/* ---- Print / "Download your results" ---- */
+.print-only{display:none;}
+@media print{
+  @page{margin:14mm 16mm;}
+  html,body{background:#fff !important; color:var(--teal-deep);}
+  body{font-size:12.5px; line-height:1.45;}
+  .page-tabs,.doc-status,.usage,.quick-nav,.btn,.footer-bar,#cbs-cmt-app,.hero-meta{display:none !important;}
+  .print-only{display:block;}
+  .page-header{padding:0 0 6px; text-align:left;}
+  .page-header img{height:40px !important;}
+  .hero-title{font-size:26px; max-width:none; margin:0;}
+  .hero-sub{font-size:14px; margin:8px 0 0; max-width:none;}
+  .container{padding:10px 0 0; max-width:none;}
+  .intro p{font-size:12.5px;}
+  .check-section{margin-top:22px; margin-bottom:8px; font-size:14px; break-after:avoid;}
+  .check-item,.assess-item{padding:7px 10px; margin-bottom:5px; box-shadow:none; break-inside:avoid;
+    border:1px solid rgba(3,15,51,0.15);}
+  .check-item label,.assess-item p{font-size:12.5px;}
+  .check-item input[type=checkbox]{width:14px; height:14px; margin-top:2px; border-width:1.2px;}
+  .check-item input[type=checkbox]:checked::after{left:4px; top:1px; width:3.5px; height:7px;}
+  .check-item input[type=checkbox]:checked + label{opacity:1; font-weight:600;}
+  .assess-opts label{font-size:10.5px; padding:3px 8px;}
+  .score-card,.cta,.proof{box-shadow:none; break-inside:avoid; margin-top:18px; padding:16px 20px; border-radius:8px;}
+  .score-num{font-size:40px;} .score-band{font-size:12px; padding:5px 0 5px 10px; margin-bottom:4px;}
+  .cta h3{font-size:16px;} .cta p{font-size:12.5px; margin-bottom:6px;}
+  .proof{display:none;}
+  mark.cbs-cmt-hl{background:none !important; border:none !important; padding:0;}
+  *{-webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;}
+}
 </style>
 </head>
 <body>
@@ -163,11 +193,11 @@ body{font-family:'Nunito Sans',sans-serif; color:var(--teal-deep); background:va
   <div class="check-section" id="s5"><span>05</span>Integration and Sustainment</div>
   <div class="check-item"><input type="checkbox" id="c16"><label for="c16">The quality system is woven into how the business already runs, not bolted on.</label></div>
   <div class="check-item"><input type="checkbox" id="c17"><label for="c17">Reviews and internal audits still happen in busy weeks, not only in slow ones.</label></div>
-  <div class="check-item"><input type="checkbox" id="c18"><label for="c18">The team can keep the system running without a consultant in the room.</label></div>
-  <div class="check-item"><input type="checkbox" id="c19"><label for="c19">The timeline to certification is realistic, including audit scheduling.</label></div>
+  <div class="check-item"><input type="checkbox" id="c18"><label for="c18">The team can keep the system running without an auditor in the room.</label></div>
+  <div class="check-item"><input type="checkbox" id="c19"><label for="c19">The system is always audit-ready. Nobody scrambles to prep for the recertification audit.</label></div>
 
   <div class="check-section" id="s6"><span>06</span>The Aerospace-Specific Requirements</div>
-  <div class="check-item"><input type="checkbox" id="c20"><label for="c20">Configuration is controlled: the floor builds the revision engineering released.</label></div>
+  <div class="check-item"><input type="checkbox" id="c20"><label for="c20">Configuration is controlled: the floor builds to the proper engineering revision.</label></div>
   <div class="check-item"><input type="checkbox" id="c21"><label for="c21">Counterfeit parts prevention is a working process, not a policy statement.</label></div>
   <div class="check-item"><input type="checkbox" id="c22"><label for="c22">Product safety has an owner, and people can name their role in it.</label></div>
   <div class="check-item"><input type="checkbox" id="c23"><label for="c23">Foreign object debris prevention is built into daily floor routines.</label></div>
@@ -185,7 +215,9 @@ body{font-family:'Nunito Sans',sans-serif; color:var(--teal-deep); background:va
     <h3>Bring the boxes you could not check.</h3>
     <p>Set up a call with one of our consultants. We will tell you which gaps matter most, which an auditor finds first, and what we would do about them. Straight answers.</p>
     <a class="btn" href="#">Set up a call</a>
-    <a class="btn ghost" href="CBS_AS9100_Readiness_Checklist.pdf" download>Download the PDF</a>
+    <a class="btn ghost" href="#" id="print-results">Download your results</a>
+    <a class="btn ghost" href="CBS_AS9100_Readiness_Checklist.pdf" download>Download the blank PDF</a>
+    <p class="print-only" style="margin:14px 0 0; font-size:12px; opacity:.85;">cbsteam.com</p>
   </div>
 
 </div>
@@ -588,6 +620,13 @@ body{font-family:'Nunito Sans',sans-serif; color:var(--teal-deep); background:va
     load();
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",start); else start();
+})();
+</script>
+
+<script>
+(function(){
+  var b=document.getElementById("print-results"); if(!b) return;
+  b.addEventListener("click",function(e){ e.preventDefault(); window.print(); });
 })();
 </script>
 
